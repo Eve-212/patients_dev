@@ -7,10 +7,11 @@
           <span class="nav-text">My Profile</span>
         </router-link>
       </li>
-      <li>
-        <a href="#">
-                    <i class="fa fa-font fa-2x"></i><span class="nav-text">Quotes</span>
-                </a>
+     <li>
+        <router-link :to="{ name: 'edit' }">
+          <i class="fa fa-font fa-2x"></i>
+          <span class="nav-text">Edit</span>
+        </router-link>
       </li>
       <li>
         <a href="#">

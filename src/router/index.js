@@ -4,6 +4,7 @@ import MainLayout from '@/views/Main'
 import LoginPage from "@/views/Login"
 import ProfileComponent from "@/components/Profile"
 import TableComponent from "@/components/Table"
+import EditNote from "@/components/note_components/EditNote"
 
 Vue.use(Router)
 
@@ -16,10 +17,9 @@ export default new Router({
             component: LoginPage
         },
         {
-            path: "/main",
+            path: "/",
             component: MainLayout,
-            children:[
-            
+            children:[            
               {
                 path: '',
                 component: ProfileComponent,
@@ -35,6 +35,11 @@ export default new Router({
                     component: TableComponent,
                     props: true
                   },
+                  {
+                    path: '/edit', 
+                    name: "edit", 
+                    component: EditNote                    
+                  }
                 ]
               },
 
