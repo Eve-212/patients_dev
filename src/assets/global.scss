@@ -1,0 +1,37 @@
+
+@function px-to-vw($px, $base) {
+  @return ($px * 100 / $base) * 1vw;
+}
+
+$break-small: 450px;
+$break-medium: 800px;
+$break-large: 1200px;
+$brown: #786450;
+$blue:  #506478;
+$black: #1d2129;
+
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Microsoft JhengHei, sans-serif, Font Awesome 5 Brands;
+}
+
+* {
+    font-size: 14px;
+    color: $black;
+}
+
+*:focus {
+    outline: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.fa {
+    cursor: pointer;
+    font-size: 14px;
+    color: $black;
+}
