@@ -1,5 +1,5 @@
 <template>
-  <div :class="{expanded: isExpanded}">
+  <div :class="{isExpanded: isExpanded}">
     <div class="card-wrap">
       <div>柯博文｜<span>Obstetrics and gynaecology units</span></div>
       <div>
@@ -160,14 +160,6 @@ export default {
 
   @media screen and (max-width: $break-medium) {
     padding: 15px;
-  }
-}
-
-.expanded {
-  margin-left: 190px;
-
-  @media screen and (max-width: $break-medium) {
-    margin-left: 0;
   }
 }
 

@@ -20,12 +20,12 @@ Vue.use(AirbnbStyleDatepicker, {
   colors: {
     selected: '#506478',
     inRange: '#A0B4C8',
-    inRangeBorder: '#A0B4C8',
+    inRangeBorder: '#A0B4C8'
   },
   texts: {
     apply: 'Submit',
     cancel: 'Close'
-  },
+  }
 })
 
 export default {
@@ -51,9 +51,7 @@ export default {
       //Fire when user hit "Submit"
     }
   }
-
 }
-
 </script>
 <style lang="scss">
 @import '../assets/global.scss';
@@ -92,5 +90,4 @@ export default {
   margin-right: 5px;
   color: #fff;
 }
-
 </style>

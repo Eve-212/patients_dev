@@ -6,8 +6,10 @@
 				:is="getComponentName(field)"
 				:schema="field" 
 				v-model="jsonSchemaData" ></component>
+
 		</div>
-		<!-- {{ schemaData }}     -->
+		<!-- {{ jsonSchema }} -->
+		<!-- {{ jsonSchemaData }}     -->
 	</div>
 </template>
 
@@ -103,9 +105,6 @@ export default {
 }
 .display-inline {
 	display: inline-block;
-}
-body {
-	margin-left: 2%;
 }
 .padding-left {
 	padding-left: 3px;

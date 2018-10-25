@@ -18,12 +18,12 @@ export default {
     },
     right: {
       type: String,
-      default: '10px',
+      default: '10px'
     },
     bottom: {
       type: String,
-      default: '-10px',
-    },
+      default: '-10px'
+    }
   },
   data() {
     return {
@@ -32,10 +32,11 @@ export default {
   },
   mounted() {
     window.smoothscroll = () => {
-      let currentScroll = document.documentElement.scrollTop || document.body.scrollTop
+      let currentScroll =
+        document.documentElement.scrollTop || document.body.scrollTop
       if (currentScroll > 0) {
         window.requestAnimationFrame(window.smoothscroll)
-        window.scrollTo(0, Math.floor(currentScroll - (currentScroll / 5)))
+        window.scrollTo(0, Math.floor(currentScroll - currentScroll / 5))
       }
     }
     window.addEventListener('scroll', this.catchScroll)
@@ -44,25 +45,23 @@ export default {
     window.removeEventListener('scroll', this.catchScroll)
   },
   methods: {
-
     catchScroll() {
-      this.visible = (window.pageYOffset > parseInt(this.visibleoffset))
+      this.visible = window.pageYOffset > parseInt(this.visibleoffset)
     },
 
     backToTop() {
       window.smoothscroll()
-      this.$emit('scrolled');
+      this.$emit('scrolled')
     }
   }
 }
-
 </script>
 <style lang="scss">
 @import '../assets/global.scss';
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .7s;
+  transition: opacity 0.7s;
 }
 
 .fade-enter,
@@ -87,5 +86,4 @@ export default {
     color: #fff;
   }
 }
-
 </style>
