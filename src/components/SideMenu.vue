@@ -2,7 +2,7 @@
   <div class="side-menu" :class="{expanded: isExpanded}">
     <ul>
       <li>
-        <router-link :to="{ name: 'main' }">
+        <router-link :to="{ name: 'incompletedTable' }">
           <i class="fa fa-home fa-2x"></i>
           <span class="nav-text">My Profile</span>
         </router-link>
@@ -52,14 +52,11 @@ export default {
   overflow: hidden;
   transition: width .1s linear;
   font-size: 14px;
-
-  &:hover,
-  .side-menu.expanded {
+  &:hover, &.expanded {
     width: 250px;
     overflow: visible;
     box-shadow: 3px 3px 10px -2px rgba(20%, 20%, 40%, 0.5);
   }
-
   @media screen and (max-width: $break-small) {
     width: 50px;
   }
@@ -104,18 +101,6 @@ export default {
 
     @media screen and (max-width: $break-small) {
       width: 50px;
-    }
-  }
-
-  &.expanded {
-    width: 250px;
-    overflow: visible;
-    box-shadow: 3px 3px 10px -2px rgba(20%, 20%, 40%, 0.5);
-  }
-
-  @media screen and (min-width: $break-medium) {
-    .expanded~div {
-      margin-left: 250px;
     }
   }
 }

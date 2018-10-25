@@ -27,21 +27,19 @@ export default {
   methods: {
     toggleExpand() {
       //Side Menu Toggle
-      this.isExpanded = !this.isExpanded;
-      this.$emit("isExpanded", this.isExpanded);
+      this.isExpanded = !this.isExpanded
+      this.$emit('isExpanded', this.isExpanded)
     },
     logout() {
       //Logout
-      let logout = confirm('Sure you want to log out?');
+      let logout = confirm('Sure you want to log out?')
       if (logout == true) {
-        this.$emit("authenticated", false);
-        this.$router.replace({ name: "login" });
+        this.$emit('authenticated', false)
+        this.$router.replace({ name: 'login' })
       }
-    },
+    }
   }
-
 }
-
 </script>
 <style lang="scss" scoped>
 @import '../assets/global.scss';
@@ -101,24 +99,25 @@ header {
       border-radius: 0;
       position: relative;
       right: 0;
-      letter-spacing: .05rem;
-      background: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png) #ececec;
+      letter-spacing: 0.05rem;
+      background: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png)
+        #ececec;
       background-repeat: no-repeat;
       background-position: 1rem 50%;
       background-size: 2rem;
       outline: 0;
-      transition: background .3s ease-out, opacity .5s ease-out;
+      transition: background 0.3s ease-out, opacity 0.5s ease-out;
       width: 50%;
 
       @media screen and (max-width: 1024px) {
         width: 100%;
       }
 
-      @media screen and (max-width:$break-medium) {
+      @media screen and (max-width: $break-medium) {
         width: 70%;
       }
 
-      @media screen and (max-width:$break-small) {
+      @media screen and (max-width: $break-small) {
         width: 70%;
       }
     }
@@ -126,13 +125,13 @@ header {
     button {
       height: 40px;
       width: 120px;
-      color: #FFF;
+      color: #fff;
       font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
       cursor: pointer;
       outline: 0;
-      transition: all .4s ease-out;
+      transition: all 0.4s ease-out;
       border-radius: 0;
       background: $blue;
 
@@ -169,5 +168,4 @@ header {
     }
   }
 }
-
 </style>

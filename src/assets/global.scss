@@ -35,3 +35,10 @@ button:focus {
     font-size: 14px;
     color: $black;
 }
+
+.isExpanded {
+  margin-left: 190px;
+  @media screen and (max-width: $break-medium) {
+    margin-left: 0;
+  }
+}

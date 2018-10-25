@@ -1,5 +1,5 @@
 <template>
-	<div>    
+	<div :class="{isExpanded: isExpanded}">    
 		<div v-for="(schema, index) in schemas" :key="index">      
       <Section :schema="schema" :schemaData="data[index]"></Section>
     </div>
@@ -9,8 +9,10 @@
 <script>
 import Section from '../Section';
 
+
 export default {
-  name: "EditNote",
+  name: 'EditNote',
+  props: ['isExpanded'],
   components: {
     Section
   },
@@ -210,6 +212,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+@import '../../assets/global.scss';
 </style>
