@@ -9,7 +9,6 @@
 <script>
 import Section from '../Section';
 
-
 export default {
   name: 'EditNote',
   props: ['isExpanded'],
