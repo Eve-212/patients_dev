@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div>		
 		<h2>{{ jsonSchema.title }}</h2>        
 		<div v-for="(field, key) in jsonSchema.properties" :key="key">   			        
 			<component 

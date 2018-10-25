@@ -3,7 +3,7 @@
     <div class="inner-wrap">
       <div class="tabs">
         <div v-for="(n, index) in renderTab.category">
-          <router-link class="tab" :class="{'router-link-active': $route.fullPath ==='/main/' && n == 'incompeleted'}" :to="{ name: 'dataTable' , params:{type:n} }" @click.native="getDatas(n)">
+          <router-link class="tab" :class="{'router-link-active': $route.fullPath ==='/' && n == 'incompeleted'}" :to="{ name: 'dataTable' , params:{type:n} }" @click.native="getDatas(n)">
             {{ n | tabTitle }}
             <span class="badge">{{ items.badgeCount[index] }}</span>
           </router-link>

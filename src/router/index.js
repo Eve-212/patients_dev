@@ -21,12 +21,13 @@ export default new Router({
             component: MainLayout,
             children:[            
               {
-                path: '',
+                path: '/',
+                name: 'main',
                 component: ProfileComponent,
                 children: [
                   {
                     path: '', 
-                    name: "main", 
+                    name: 'main', 
                     component: TableComponent
                   },
                   {
@@ -34,15 +35,17 @@ export default new Router({
                     name: "dataTable", 
                     component: TableComponent,
                     props: true
-                  },
-                  {
-                    path: '/edit', 
-                    name: "edit", 
-                    component: EditNote                    
                   }
+                  
                 ]
+                
+              
               },
-
+              {
+                path: '/edit', 
+                name: "edit", 
+                component: EditNote                    
+              }
             ],        
         },
     ]
