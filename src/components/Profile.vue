@@ -12,18 +12,19 @@
     <div class="content-wrap">
       <router-view @unfollow="unfollow"></router-view>
     </div>
+    <button @click="getAllData">取得</button>
   </div>
 </template>
 <script>
 import Vue from 'vue'
 import APIClient from 'moleculer-openapi-client'
+import axios from 'axios'
 
 export default {
-
   props: ['isExpanded'],
 
   beforeRouteUpdate(to, from, next) {
-    next();
+    next()
   },
   data() {
     return {
@@ -33,16 +34,16 @@ export default {
           followBtn: {
             text: 'Follow',
             clicked: false
-          },
+          }
         }
-      },
-    };
+      }
+    }
   },
   methods: {
     follow() {
       // [Follow button] effect
-      const { basic } = this.items;
-      basic.followBtn.clicked = !basic.followBtn.clicked;
+      const { basic } = this.items
+      basic.followBtn.clicked = !basic.followBtn.clicked
       if (basic.followBtn.clicked) {
         basic.followBtn.text = 'Followed'
       } else {
@@ -50,42 +51,49 @@ export default {
       }
     },
     unfollow(list) {
-      //Unfollow function
-      let unfollow = confirm('Sure you want to unfollow the doctor?');
+      let unfollow = confirm('Sure you want to unfollow the doctor?')
+      if (unfollow) {
+        console.log('unfollow doctor success')
+      }
     },
-    // getAllData : function() {
-    //     let wf = new APIClient({
-    //         spec_url:"http://10.66.30.213:4000/api/spec.get",
-    //         server_url:"http://10.66.30.213:4000/api"
-    //     });
+    getAllData: function() {
+      axios({
+        methods: 'get',
+        url: 'http://10.65.1.228:3000/api/ipd'
+      }).then(resp => {
+        console.log(resp)
+      })
+      // let wf = new APIClient({
+      //   spec_url: 'http://10.66.30.213:4000/api/spec.get',
+      //   server_url: 'http://10.65.1.228:3001/api'
+      // })
 
-    //     wf.loader.then($spec => { 
-    //         this.spec=$spec;
-    //         this.wf=wf;
-    //         console.log(wf.note);
+      // wf.loader
+      //   .then($spec => {
+      //     this.spec = $spec
+      //     this.wf = wf
+      //     console.log(wf.note)
 
-    //         wf.note.get().then($list => {
-    //             console.log($list);
-    //         })
+      //     wf.note.get().then($list => {
+      //       console.log($list)
+      //     })
 
-    //         wf.pt.get({no:'00000002'}).then($patient_file=> {
-    //                 console.log($patient_file);
-    //             }
-    //         )
-    //     })
-    //     .catch(error => {
-    //         console.log(error.response.data.message)
-    //     });
-    // },
+      //     wf.pt.get({ no: '00000002' }).then($patient_file => {
+      //       console.log($patient_file)
+      //     })
+      //   })
+      //   .catch(error => {
+      //     console.log(error.response.data.message)
+      //   })
+    }
   }
 }
-
 </script>
 <style lang="scss" scoped>
 @import '../assets/global.scss';
 
 .card-wrap {
-  box-shadow: 0 1px 8px rgba(170, 170, 170, .3);
+  box-shadow: 0 1px 8px rgba(170, 170, 170, 0.3);
   color: $brown;
   padding: 15px;
   display: flex;
@@ -120,10 +128,10 @@ export default {
       border-radius: 15px;
       font-size: 12px;
       font-weight: 600;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
       color: $brown;
       padding: 0;
-      opacity: .6;
+      opacity: 0.6;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -162,5 +170,4 @@ export default {
     padding: 15px;
   }
 }
-
 </style>
