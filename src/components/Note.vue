@@ -1,5 +1,5 @@
 <template> 
-	<div>		
+	<div class="padding-left-large">		
 		<!-- <h2>{{ jsonSchema.title }}</h2>  
 		{{ jsonSchema.title }}      
 		<div v-for="(field, key) in jsonSchema.properties" :key="key">   	
@@ -132,4 +132,8 @@ export default {
 .padding-left {
 	padding-left: 3px;
 }
+.padding-left-large {
+	padding-left: 20px;
+}
+
 </style>

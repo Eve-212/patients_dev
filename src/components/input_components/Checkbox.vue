@@ -4,7 +4,7 @@
 			:for="currentKey">
 			{{ schema.attrs.label }}
 			<input
-				id="checkbox-input"
+				:id="currentKey"
 				type="checkbox"
 				:name="currentKey"
 				v-model="value[currentKey]">

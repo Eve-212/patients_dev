@@ -1,5 +1,5 @@
-[
-  {
+
+  "socioeco": {
     "title": "Social/Economic Evaluation",
     "description": "social/Economic Evaluation",
     "type": "object",
@@ -84,4 +84,4 @@
       }
     }
   }
-]
+

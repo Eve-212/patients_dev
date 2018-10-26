@@ -1,8 +1,9 @@
 <template>
 	<div v-if="showInputField">
-		<legend>{{ schema.title }}</legend>
+		<label :for="currentKey">{{ schema.title }}</label>
 		<div
-			class="display-inline" 
+      :id="currentKey"			
+      class="display-inline" 
 			v-for="(item, index) in schema.attrs.values" 
 			:key="index">
 			<input 

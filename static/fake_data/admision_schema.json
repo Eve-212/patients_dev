@@ -72,7 +72,11 @@
                   "properties": {
                       "used": {
                           "title":"Used",
-                          "type": "boolean"
+                          "type": "boolean",
+                          "attrs": {
+                              "fieldType": "radio",
+                              "values": ["Yes", "No"]
+                          }
                       },
                       "type": {
                           "title":"Type",
@@ -84,7 +88,11 @@
                       },
                       "quitted": {
                           "title":"Quitted",
-                          "type": "boolean"
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                            }
                       },
                       "pack_per_day": {
                           "title":"Packs per day",
@@ -96,7 +104,11 @@
                       },
                       "passive_expose": {
                           "title":"Passive smoking",
-                          "type": "boolean"
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                            }
                       }
                   }
               },
@@ -106,11 +118,19 @@
                   "properties": {
                       "used": {
                           "title":"Used",
-                          "type": "boolean"
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                            }
                       },
                       "quitted": {
                           "title":"Quited",
-                          "type": "boolean"
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                        }
                       },
                       "vol_per_day": {
                           "title":"Volumn(ml) per day",
@@ -127,11 +147,19 @@
                   "properties": {
                       "used": {
                           "title":"Betel nuts",
-                          "type": "boolean"
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                        }
                       },
                       "quitted": {
                           "title":"Quited",
-                          "type": "boolean"
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                        }
                       },
                       "num_per_day": {
                           "title":"Number per day",
@@ -315,7 +343,11 @@
                       },
                       "acute_effect": {
                           "title":"Acutely illness because of poor intake",
-                          "type": "boolean"
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                        }
                       },
                       "acute_effect_score": {
                           "title":"Acute disease effect score",
@@ -436,23 +468,43 @@
           "properties": {
               "intact": {
                   "title":"Intact",
-                  "type": "boolean"
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
               },
               "turgor": {
                   "title":"Turgor",
-                  "type": "boolean"
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
               },
               "cynosis": {
                   "title":"Cyanosis",
-                  "type": "boolean"
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
               },
               "jaundice": {
                   "title":"Jaundice",
-                  "type": "boolean"
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
               },
               "petechia": {
                   "title":"Petechia",
-                  "type": "boolean"
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
               }
           }
       },

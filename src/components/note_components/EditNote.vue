@@ -34,7 +34,7 @@ export default {
     //   console.log(res.body)
     //   console.log("yay")
     // })   
-    const json = require("../../../static/fake_data/schemas.json")      
+    const json = require("../../../static/fake_data/schemas2.json")      
     this.noteSchema = json
   }
 }

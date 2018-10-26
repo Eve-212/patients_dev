@@ -78,8 +78,11 @@ export default {
 				}			
 				else if (field.type === 'object') {
 					return "ObjectComponent"
-				}			
-      }
+				}		
+				else if (field.type === 'array') {
+					return "CheckList"
+				}	
+			}
       
       switch (field.attrs.fieldType) {
         case 'text':
