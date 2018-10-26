@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Social/Economic Evaluation",
+    "description": "social/Economic Evaluation",
+    "type": "object",
+    "properties": {
+      "living": {
+        "description": "lives",
+        "type": "string",
+        "title": "Lives",
+        "attrs": {
+          "fieldName": "living",
+          "fieldType": "radio",
+          "values": ["Residential home", "Nursing home", "Homeless"]
+        }
+      },
+      "family": {
+        "description": "family",
+        "type": "string",
+        "title": "Family support",
+        "attrs": {
+          "fieldName": "family",
+          "fieldType": "radio",
+          "values": ["Well", "Moderate", "Poor"]
+        }
+      },
+      "caregiver": {
+        "description": "caregiver",
+        "type": "string",
+        "title": "Main caregiver",
+        "attrs": {
+          "fieldName": "caregiver",
+          "fieldType": "radio",
+          "values": ["Couple", "Children", "Other"]
+        }
+      },
+      "finacial": {
+        "description": "finacial",
+        "type": "string",
+        "title": "Financial support",
+        "attrs": {
+          "fieldName": "finacial",
+          "fieldType": "radio",
+          "values": ["Sufficient", "Insufficient"]
+        }
+      }
+    }
+  },
+  {
+    
+  }
+]
