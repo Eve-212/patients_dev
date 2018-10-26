@@ -59,7 +59,7 @@ export default {
     getAllData: function() {
       axios({
         methods: 'get',
-        url: 'http://10.65.1.228:3000/api/ipd'
+        url: 'http://10.65.1.66:3000/OneRecord/schema/raw/commit/10bd41458243f6ddd05d5d6000a37dfc86543d22/sch.note.adm.json'
       }).then(resp => {
         console.log(resp)
       })
