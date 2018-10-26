@@ -153,6 +153,15 @@ export default {
 </script>
 
 <style>
+.field-title {
+	color: blueviolet;
+}
+.display-inline {
+	display: inline-block;
+}
+.padding-left {
+	padding-left: 3px;
+}
 </style>
 
 

@@ -1,7 +1,6 @@
-[
+
   {    
-    "title": "Admission Note",
-    "description": "admission note",
+    "title": "Adm Note",    
     "type": "object",
     "properties": {
         "profile": {          
