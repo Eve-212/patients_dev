@@ -1,204 +1,215 @@
 
-  {    
-    "title": "Adm Note",    
-    "type": "object",
-    "properties": {
-        "profile": {          
-          "type": "object",
-          "title": "Basic Profile",
-          "attrs": {
-              "fieldName": "habits"
-          },
-          "properties": {
-              "smoking": {
-                "description": "smoking habit",
-                "type": "string",
-                "attrs": {
-                    "fieldType": "radio",
-                    "label": "Smoking",
-                    "values": [
-                      "Yes",
-                      "No"
-                    ],
-                    "fieldName": "smoking"
-                }
-              },
-              "species": {
-                "description": "cigarette species",
-                "type": "array",
-                "attrs": {
-                    "dependsOn": {
-                      "name": "smoking",
-                      "values": [
-                          "Yes"
-                      ]
-                    },
-                    "fieldType": "checklist",
-                    "fieldName": "species",
-                    "label": "Species",
-                    "values": [
-                      "Cigarettes",
-                      "Electronic cigarettes"
-                    ]
-                }
-              }
-          }
-        },
-        "things": {
-          "description": "blah blah blah",
-          "type": "object",
-          "title": "Exercise",
-          "attrs": {
-              "fieldType": "object",
-              "fieldName": "things"
-          },
-          "properties": {
-              "exercise": {
-                "description": "exercise habits",
-                "type": "string",
-                "title": "More than once a week",
-                "attrs": {
-                    "fieldType": "radio",
-                    "values": [
-                      "Yes",
-                      "No"
-                    ],
-                    "fieldName": "exercise"
-                }
-              }
-          }
-        }
-    }
-  },
   {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://example.com/product.schema.json",
-    "title": "Personal Information",
-    "description": "Information of the patient",
+    "title": "Admission Note",
     "type": "object",
     "properties": {
-        "name": {
-          "description": "",
-          "type": "string",
-          "title": "Name",
-          "attrs": {
-              "fieldName": "name",
-              "fieldType": "text",
-              "title": "fleajlfajljfi"
-          }
-        },
-        "age": {
-          "description": "",
-          "type": "integer",
-          "title": "Age",
-          "attrs": {
-              "fieldName": "age",
-              "fieldType": "number",
-              "dependsOn": {
-                "name": "name",
-                "values": [
-                    "david"
-                ]
-              }
-          }
-        },
-        "date": {
-          "description": "",
-          "type": "string",
-          "title": "Date of birth",
-          "attrs": {
-              "fieldName": "date",
+      "profile": {
+        "type": "object",
+        "title": "Basic Profile",        
+        "properties": {
+          "name": {            
+            "type": "object",
+            "title": "Habits"
+          },
+          "age": {
+            "title":"Age",
+            "type": "integer"
+          },
+          "birthdate": {
+            "title":"Birth Date",            
+            "type": "string",
+            "attrs": {
               "fieldType": "date"
+            }
+          },
+          "chr_no": {
+            "title":"Chart No",
+            "type": "string"
+          },
+          "id_no": {
+            "title":"ID",
+            "type": "string"
+          },
+          "sex": {
+            "title":"Gender",
+            "type": "string"
           }
         }
-    },
-    "required": [
-        "productId"
-    ]
-  },
-  {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://example.com/product.schema.json",
-    "title": "Review of the System",
-    "description": "review of the system of the patient",
-    "type": "object",
-    "properties": {
-        "general": {
-          "description": "general review",
-          "type": "object",
-          "title": "General",
-          "attrs": {
-              "fieldName": "general"
-          },
-          "properties": {
-              "state": {
-                "description": "general state",
-                "type": "string",
-                "attrs": {
-                    "values": [
-                      "Normal",
-                      "Abnormal"
-                    ],
+      },       
+      "admit_dept":{
+        "title":"Department",
+        "type":"string"
+      },
+      "admit_time": {
+        "title":"Time of Admission",        
+        "type": "string",
+        "attrs": {
+          "fieldType": "date"
+        }
+      },  
+      "evaluate_time": {
+        "title":"Time of History-talking",        
+        "type": "string",
+        "attrs": {
+          "fieldType": "date"
+        }
+      },
+      "source": {
+        "title":"Information Source",
+        "type": "string"
+      },
+      "cc": {
+        "title":"Chief Complaint",
+        "type": "string"
+      },
+      "pi": {
+        "title":"Present Illness",
+        "type": "string"
+      },
+      "travel_contact": {
+        "title":"Travel History",
+        "type": "string"
+      },
+      "personal_hx": {
+        "title":"Personal History",
+        "type": "object",
+        "properties": {
+          "cigarette": {
+            "title":"Smoking",
+            "type": "object",
+            "properties": {
+              "used": {
+                  "title":"Used",
+                  "type": "boolean",
+                  "attrs": {
                     "fieldType": "radio",
-                    "fieldName": "state",
-                    "label": "State"
-                }
+                    "values": ["Yes", "No"]
+                  }
               },
-              "abnormalities": {
-                "description": "abnormalities of the patient",
-                "type": "string",
-                "title": "Abnormalities",
-                "attrs": {
-                    "fieldType": "checklist",
-                    "fieldName": "abnormalities",
-                    "values": [
-                      "dizziness",
-                      "Fainting",
-                      "Insomnia",
-                      "Mental status change",
-                      "Weakness",
-                      "Numbness",
-                      "Convulsion",
-                      "Memory defect",
-                      "Tremor",
-                      "Gait disturbance",
-                      "Delusion",
-                      "Drug abuse",
-                      "Suicide attempt",
-                      "Hallucination",
-                      "Stress",
-                      "Nervousness",
-                      "Depression",
-                      "Other"
-                    ],
-                    "dependsOn": {
-                      "name": "state",
-                      "values": [
-                          "Abnormal"
-                      ]
-                    }
-                }
+              "type": {
+                  "title":"Type",
+                  "type": "array",
+                  "items": {                      
+                      "values":["Cigarettes","Electronic cigarettes"]
+                  }
               },
-              "other": {
-                "description": "abnormalities of the patient",
-                "type": "string",
-                "attrs": {
-                    "fieldType": "text",
-                    "fieldName": "other",
-                    "dependsOn": {
-                      "name": "abnormalities",
-                      "values": [
-                          "Other"
-                      ]
-                    }
-                }
+              "quitted": {
+                  "title":"Quitted",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              },
+              "pack_per_day": {
+                  "title":"Packs per day",
+                  "type": "number"
+              },
+              "duration": {
+                  "title":"for years",
+                  "type": "number"
+              },
+              "passive_expose": {
+                  "title":"Passive smoking",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              }
+            }
+          }
+        },          
+        "alcohol": {
+          "title":"Alcohol drinking",
+          "type": "object",
+          "properties": {
+            "used": {
+              "title":"Used",
+              "type": "boolean",
+              "attrs": {
+                "fieldType": "radio",
+                "values": ["Yes", "No"]
+              }
+            },
+            "quitted": {
+              "title":"Quited",
+              "type": "boolean",
+              "attrs": {
+                "fieldType": "radio",
+                "values": ["Yes", "No"]
+              }
+            },
+            "vol_per_day": {
+              "title":"Volumn(ml) per day",
+              "type": "integer"
+            },
+            "duration": {
+              "title":"for years",
+              "type": "integer"
+            }
+          }
+        },
+        "betel_nut": {
+          "type": "object",          
+          "properties": {
+              "used": {
+                  "title":"Betel nuts",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              },
+              "quitted": {
+                  "title":"Quited",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              },
+              "num_per_day": {
+                  "title":"Number per day",
+                  "type": "integer"
+              },
+              "duration": {
+                  "title":"for years",
+                  "type": "integer"
               }
           }
         }
-    },
-    "required": [
-        "productId"
-    ]
+      },
+      "family_hx": {
+        "title":"Family History",
+        "type": "object"
+      },
+      "past_hx": {
+        "title":"Past History",
+        "type": "object",
+        "properties": {
+            "note": {
+                "title":"Note",
+                "type": "string"
+            }
+        }
+      },
+      "medication_hx": {
+        "title":"Medication history",
+        "type": "object",
+        "properties": {
+            "in_institute": {
+                "title":"Inside hospital",
+                "type": "string"
+            },
+            "out_institute": {
+                "title":"Other hispital/Clinic",
+                "type": "string"
+            }
+        }
+      },
+      
   }
-]
+}
+
 

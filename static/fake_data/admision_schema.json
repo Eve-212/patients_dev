@@ -174,8 +174,8 @@
                   "title":"Note",
                   "type": "string"
               }
-          }
-      },
+          },
+      
       "family_hx": {
           "title":"Family History",
           "type": "object"
@@ -534,4 +534,5 @@
           "type": "string"
       }
   }
+}
 
