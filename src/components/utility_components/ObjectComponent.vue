@@ -1,10 +1,7 @@
 <template>
 	<div v-if="showInputField"> 
-    <!-- {{ schema }} -->
 		<legend class="field-title">{{ schema.title }}</legend>  
 		<div v-for="(field, key) in schema.properties" :key="key"> 
-      <!-- {{ field }}   -->
-      <!-- {{ key }} -->
 			<component 
 				:is="getComponentName(field)" 
 				:schema="field"
