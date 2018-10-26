@@ -1,13 +1,13 @@
 <template>
 	<div v-if="showInputField">
 		<label
-			:for="schema.attrs.fieldName">
+			:for="currentKey">
 			{{ schema.attrs.label }}
 			<input
 				id="checkbox-input"
 				type="checkbox"
-				:name="schema.attrs.fieldName"
-				v-model="value[schema.attrs.fieldName]">
+				:name="currentKey"
+				v-model="value[currentKey]">
 		</label>
 	</div>
 </template>
@@ -27,45 +27,51 @@ export default {
       default() {
         return {}
       }
+    },
+    currentKey: {
+      type: String,
+      default() {
+        return ""
+      }
     }
   },
   data() {
     return {
-      currentFieldName: this.schema.attrs.fieldName
+      
     }
   },
   methods: {
     clearInput() {
-      // this.value[this.schema.attrs.fieldName] = null
+      // this.value[this.currentKey] = null
       let initValue = null
       switch (this.$options.name) {
         case 'TextInput':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'NumberInput':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'Checkbox':
           initValue = false
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'CheckList':
           initValue = []
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'RadioInput':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'SelectDate':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'SelectList':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
       }
     }

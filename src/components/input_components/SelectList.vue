@@ -3,13 +3,13 @@
 	<div>
 		<fieldset>
 			<div v-if="showInputField">
-				<select v-model="value[schema.fieldName]">
+				<select v-model="value[currentKey]">
 					<template v-if="typeof schema.attrs.placeholder !== 'undefined'">
 						<option value="" >{{ schema.attrs.placeholder }}</option>
 					</template>
 					<!-- dynamic placeholder and placeholder name?-->
 					<option
-						v-for="(item, index) in schema.values"
+						v-for="(item, index) in schema.attrs.values"
 						:key="index"
 						:value="item">
 						{{ item }}
@@ -35,18 +35,23 @@ export default {
       default() {
         return {}
       }
+    },
+    currentKey: {
+      type: String,
+      default() {
+        return ""
+      }
     }
   },
   data() {
     return {
-      placeholder: this.getPlaceholder(),
-      currentFieldName: this.schema.fieldName
+      placeholder: this.getPlaceholder()      
     }
   },
   created: function() {
-    if (!(this.currentFieldName in this.value)) {
-      // this.value[this.currentFieldName] = {}
-      this.$set(this.value, this.currentFieldName, '')
+    if (!(this.currentKey in this.value)) {
+      // this.value[this.currentKey] = {}
+      this.$set(this.value, this.currentKey, '')
       //this.value["keyOnCreate"] = {};
     }
   },
@@ -57,31 +62,31 @@ export default {
       switch (this.$options.name) {
         case 'TextInput':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'NumberInput':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'Checkbox':
           initValue = false
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'CheckList':
           initValue = []
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'RadioInput':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'SelectDate':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
         case 'SelectList':
           initValue = ''
-          this.$set(this.value, this.currentFieldName, initValue)
+          this.$set(this.value, this.currentKey, initValue)
           break
       }
     },

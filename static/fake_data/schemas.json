@@ -17,9 +17,9 @@
               "smoking": {
                 "description": "smoking habit",
                 "type": "string",
+                "title": "Smoking",
                 "attrs": {
-                    "fieldType": "radio",
-                    "label": "Smoking",
+                    "fieldType": "radio",                    
                     "values": [
                       "Yes",
                       "No"

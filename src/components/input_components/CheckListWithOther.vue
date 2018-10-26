@@ -9,7 +9,7 @@
           type="checkbox" 
           :id="item" 
           :value="item" 
-          v-model="value[schema.attrs.fieldName]">
+          v-model="value[currentKey]">
         <label :for="item">{{ item }}</label>
       </div>
       <div class="display-inline padding-left">
@@ -49,31 +49,37 @@ export default {
       default() {
         return {}
       }
+    },
+    currentKey: {
+      type: String,
+      default() {
+        return ""
+      }
     }
   },
   data() {
     return {
       other: null,
-      currentFieldName: this.schema.attrs.fieldName
+      
     }
   },
   created: function() {
-    if (!(this.currentFieldName in this.value)) {
-      // this.value[this.currentFieldName] = {}
+    if (!(this.currentKey in this.value)) {
+      // this.value[this.currentKey] = {}
       // this.$emit('input', this.value)
-      this.$set(this.value, this.currentFieldName, [])
+      this.$set(this.value, this.currentKey, [])
       //this.value["keyOnCreate"] = {};
     }
   },
   methods: {
     clearInput() {
       let initValue = []
-      this.$set(this.value, this.currentFieldName, initValue)
+      this.$set(this.value, this.currentKey, initValue)
     }
   },
   computed: {
     addUpdateOther() {
-      if (this.value[schema.attrs.fieldName].includes(this.other)) {
+      if (this.value[currentKey].includes(this.other)) {
       }
     },
     showInputField() {
