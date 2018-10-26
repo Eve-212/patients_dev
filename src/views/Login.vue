@@ -10,7 +10,7 @@
         <input id="password" type="password" name="password" v-model="input.password" placeholder="Please enter password">
         </input>
       </fieldset>
-      <button class="btn btn-block" type="button" v-on:click="login()">Login</button>
+      <button class="btn btn-block" type="button" @click="login()">Login</button>
     </form>
   </div>
 </template>

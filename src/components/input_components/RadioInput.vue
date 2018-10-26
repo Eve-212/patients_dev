@@ -2,15 +2,16 @@
 	<div v-if="showInputField">
 		<label>{{ schema.title }}</label>
 		<div 
-			class="display-inline" 
 			v-for="(item, index) in schema.attrs.values" 
-			:key="index">
+			:key="index"
+      class="form-check form-check-inline">
 			<input 
 				type="radio" 
 				:id="item" 
 				:value="item" 
-				v-model="value[schema.attrs.fieldName]">
-			<label :for="item">{{ item }}</label>
+				v-model="value[schema.attrs.fieldName]"
+        class="form-check-input">
+			<label class="form-check-label" :for="item">{{ item }}</label>
 		</div>
 	</div>
 </template>
@@ -121,7 +122,5 @@ export default {
 </script>
 
 <style>
-/* .display-inline {
-	display: inline;
-}  */
+
 </style>
