@@ -47,6 +47,41 @@
     }
   },
   {
-    
+    "title": "Psychological Evaluation",
+    "type": "object",
+    "properties": {
+      "psyco": {
+        "description": "psyco",
+        "type": "string",
+        "attrs": {
+          "fieldName": "psyco",
+          "fieldType": "radio",
+          "values": ["Stable", "Psychotic Symptom or Dementia", "Severely Depressed", "Moderately Depressed", "Mildly Depressed", "Undetectable", "Other"]
+        }      
+      }
+    }
+  },
+  {
+    "title": "Review of the System",
+    "type": "object",
+    "properties": {
+      "general": {
+        "description": "general",
+        "type": "string",
+        "title": "General",
+        "attrs": {
+          "fieldType": "radio",
+          "values": ["Unremarkable", "Abnormal"]
+        }      
+      },
+      "abnormalities": {
+        "description": "general",
+        "type": "array",
+        "attrs": {
+          "fieldType": "checklist",
+          "values": ["Weight loss or gain", "Fever", "Chills", "Night sweating", "Fatigue", "Weakness", "Other"]
+        }
+      }
+    }
   }
 ]

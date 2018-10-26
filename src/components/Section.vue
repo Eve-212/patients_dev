@@ -2,18 +2,12 @@
 	<div>		
 		<h2>{{ jsonSchema.title }}</h2>        
 		<div v-for="(field, key) in jsonSchema.properties" :key="key">   	
-			<!-- {{ field }} -->
-			<!-- {{ key }} -->
 			<component 				
 				:is="getComponentName(field)"
 				:schema="field"
 				:currentKey="key"
 				v-model="jsonSchemaData" ></component>
-
 		</div>
-		<!-- {{ jsonSchema }} -->
-		{{ jsonSchemaData }}
-		  
 	</div>
 </template>
 
