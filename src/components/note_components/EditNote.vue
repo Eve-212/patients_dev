@@ -1,27 +1,49 @@
 <template>
-<div  :class="{isExpanded: isExpanded}">
-  <personal-history></personal-history>
-  <personal-info></personal-info>
-  <review-of-the-system></review-of-the-system>
-</div>
+	<div :class="{isExpanded: isExpanded}">    
+    <!-- <h1 class="note-title">{{ noteSchema.title }}</h1>  		   
+		<div v-for="(schema, key) in noteSchema.properties" :key="key">      
+      <Section :schema="schema" :currentKey="key"></Section>
+      <ObjectComponent :schema="schema" :currentKey="key"></ObjectComponent>
+    </div> -->
+    <Note :schema="noteSchema"></Note>
+    
+	</div>
 </template>
 
 <script>
-import PersonalHistory from '../note_components/PersonalHistory'
-import PersonalInfo from '../note_components/PersonalInfo'
-import ReviewOfTheSystem from '../note_components/ReviewOfTheSystem'
+import Note from '../Note';
+import ObjectComponent from "../utility_components/ObjectComponent"
+import axios from 'axios';
 
 export default {
   name: 'EditNote',
   props: ['isExpanded'],
   components: {
-    PersonalInfo,
-    PersonalHistory,
-    ReviewOfTheSystem
+    Note,
+    ObjectComponent
+  },
+	data() {
+		return {
+      noteSchema: null,
+      data: {}        
+    }    
+  },
+  created: function() {     
+    // axios.get('fake_data/schemas.json')
+    // .then((res) => {
+    //   console.log(res.body)
+    //   console.log("yay")
+    // })   
+    const json = require("../../../static/fake_data/schemas2.json")      
+    this.noteSchema = json
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../../assets/global.scss';
+
+// .note-title {
+//   font-size: 2.0rem;
+// }
 </style>

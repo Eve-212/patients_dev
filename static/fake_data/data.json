@@ -1,0 +1,187 @@
+{
+  "id":"0001",
+  "type":"admission",
+  "sch_ver":1,
+  "rev":3,
+  "mod_time":"2018-10-22T11:10:20Z",
+  "created_time":"2018-10-21T13:12:10Z",
+  "fee_no":"I12254551",
+  "chr_no":"",
+  "content":{
+      "profile":{
+          "name":"tester",
+          "age":30,
+          "birthdate":"1988-01-02",
+          "chr_no":"00000000",
+          "id_no":"A120122125",
+          "sex":"female"
+      },
+      
+      "admit_time":"2018-10-21T10:12:50Z",
+      "evaluate_time":"2018-10-21T16:15:44.826Z",
+      "source":"ER",
+      "cc":"Abdominal pain for one month",
+      "pi":"This 50 y/o female with history of uterine myoma s/p myomecatomy. According to the patient, left breast tumor was found for one week. No family Hx. of breast    ca. Menarche 13 G1P1 ,1st delivery at age 35. no HRT. She visited to our GS OPD for help on 2017/06/12. PE.： Lt 1/3 an ill defined tumor 2.4 cm, cT2N0M0 stage  IIA. sono： Lt 1'/5 irregular 2.9 cm. MMG： LUOQ asymmetry. Core needle biopsy was arranged on 2017/6/16： invasive ductal carcinoma, ER(+), PR(-), HER2：  Positive (Score 3+), Ki-67： 50%. We check HbsAg(-), HbsAb(+), anti-HCV(-),CEA 1.81, ca153： 8.8, Cr. 0.52, GOT/GPT 14/7, WBC 8310, seg 76%,Hb 11.0. Dr. suggest neoadjuvant chemotherapy because tumor too close to nipple. Tumor Board： EC-->TH(4x4) p't agree H自費.She received 4course EC and first Taxotere and 4course Herceptin. The breast sono： Lt 1'/3 ca. 1.2 x 0.8 cm--> suggest surgery, so she received Left partial mastectomy+SLNB on 106/10/16. The pathyology showed ypStage IA; ypT1bN0(sn). This time, she was admission for 16th Herceptin(自費).",
+      "travel_contact":"",
+      "personal_hx":{
+          "cigarette":{
+              "used":true,
+              "type":["cigarettes"],
+              "quited":false,
+              "pack_per_day":1,
+              "duration":10,
+              "passive_expose":false
+
+          },
+          "alcohol":{
+              "used":true,
+              "quited":false,
+              "vol_per_day":200,
+              "duration":5
+          },
+          "betel_nut":{
+              "used":false
+
+          }            
+      },
+      "allergy":{
+          "list":[
+              {"generic":"Diclofenac","product":"Voren","adr":"skin rash"}
+          ],
+          "note":""
+      },
+      "family_hx":{},
+      "past_hx":{
+          "note":""
+      },
+      "review_of_sys":{
+          "general":["fatigue"],
+          "skin":["rash","nodule"],
+          "heent":[],
+          "cardio_resp":[],
+          "gi":[],
+          "gu":[],
+          "neuro":[],
+          "mus_ske":[]
+      },
+      "medication_hx":{
+          "in_institute":"",
+          "out_institute":""
+      },
+      "socioeco":{
+          "living":"residual",
+          "family":"well",
+          "caregiver":"children",
+          "finatial":"sufficient"
+      },
+      "psyco":"stable",
+      "nutrition":{
+          "higth":165,
+          "weight":65,
+          "bmi":23.8,
+          "must":{
+              "bmi":23.8,
+              "bmi_score":0,
+              "weight_loss":5,
+              "weight_loss_score":0,
+              "acute_effect":true,
+              "acute_effect_score":2,
+              "score":2
+          }
+      },
+      "functional_assess":{
+          "bath":0,
+          "dress":0,
+          "toilet":1,
+          "transfer":0,
+          "continence":1,
+          "feed":0,
+          "score":2
+      },
+      "pe":{
+          "looking":"acute_ill",
+          "vitals":{
+              "bt":37.5,
+              "sbp":140,
+              "dbp":90,
+              "pr":85,
+              "rr":20,
+              "pain":3
+          }
+
+      },
+      "conscious":"awake",
+      "GCS":{
+          "e":4,
+          "v":5,
+          "m":6,
+          "score":15
+      },
+      "skin":{
+          "intact":true,
+          "turgor":false,
+          "cynosis":false,
+          "jaundice":false,
+          "petechia":false
+      },
+      "heent":{
+          "conjuntivae":"pale",
+          "sclera":"icteric",
+          "throat":"normal"
+
+      },
+      "lab":{
+          "data":{
+              "blood":[
+                  {"id":"CREB","item":"CREA","date":"2018-10-12","value":"0.83","mark":""},
+                  {"id":"EGFR","item":"eGFR","date":"2018-10-12","value":"124","mark":""},
+                  {"id":"NA","item":"Na","date":"2018-10-12","value":"133","mark":"L"},
+                  {"id":"K","item":"K","date":"2018-10-12","value":"3.7","mark":""},
+                  {"id":"ALT","item":"GPT(ALT)","date":"2018-10-12","value":"10","mark":""},
+                  {"id":"HCT","item":"HCT","date":"2018-10-12","value":"45.6","mark":""},
+                  {"id":"HGB","item":"HGB","date":"2018-10-12","value":"15.4","mark":""},
+                  {"id":"MCH","item":"MCH","date":"2018-10-12","value":"30.3","mark":""},
+                  {"id":"MCHC","item":"MCHC","date":"2018-10-12","value":"33.8","mark":""},
+                  {"id":"MCV","item":"MCV","date":"2018-10-12","value":"89.8","mark":""},
+                  {"id":"PDW","item":"PDW","date":"2018-10-12","value":"16.68","mark":""},
+                  {"id":"PLT","item":"Platelet","date":"2018-10-12","value":"197","mark":""},
+                  {"id":"R-CV","item":"RDW-CV","date":"2018-10-12","value":"13.0","mark":""},
+                  {"id":"RBC","item":"RBC","date":"2018-10-12","value":"5.08","mark":""},
+                  {"id":"WBC","item":"WBC","date":"2018-10-12","value":"14.56","mark":"H"},
+                  {"id":"BASO","item":"Basophil","date":"2018-10-12","value":"0.20","mark":""},
+                  {"id":"EOS","item":"Eosinophil","date":"2018-10-12","value":"0.10","mark":""},
+                  {"id":"LYMP","item":"Lymphocyte","date":"2018-10-12","value":"9.50","mark":"L"},
+                  {"id":"MONO","item":"Monocyte","date":"2018-10-12","value":"4.80","mark":""},
+                  {"id":"NEUT","item":"Neutrophil(seg)","date":"2018-10-12","value":"85.40","mark":"H"},
+                  {"id":"NRBC","item":"NRBC/100WBC","date":"2018-10-12","value":"0.00","mark":""},
+                  {"id":"INR","item":"INR","date":"2018-10-12","value":"1.080","mark":""},
+                  {"id":"PT","item":"PT","date":"2018-10-12","value":"13.6","mark":""},
+                  {"id":"PT-C","item":"Mean Normal Prothrombin Time","date":"2018-10-12","value":"12.8","mark":""},
+                  {"id":"APTT","item":"aPTT","date":"2018-10-12","value":"33.5","mark":""},
+                  {"id":"PTT-C","item":"Mean Normal aPTT","date":"2018-10-12","value":"38.5","mark":""},
+                  {"id":"GLUR","item":"Glu(random)","date":"2018-10-12","value":"99","mark":""}
+              ]
+          },
+          "note":""
+      },
+      "image":[
+          {
+              "date":"2018-10-12",
+              "content":"Chest X ray ....."
+          }
+      ],
+      "ecg":"Normal sinus rhythm",
+      "exam":[
+          {
+              "date":"2018-10-12",
+              "content":"Abdominen Sonography ....."
+          }
+      ],
+      "impression":"",
+      "plan":""
+
+
+  }
+  
+
+}

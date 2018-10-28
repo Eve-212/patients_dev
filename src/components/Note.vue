@@ -1,15 +1,29 @@
-<template>
-	<div>
-		<h2>{{ jsonSchema.title }}</h2>        
-		<div v-for="(field, key) in jsonSchema.properties" :key="key">   			        
-			<component 
+<template> 
+	<div class="padding-left-large">		
+		<!-- <h2>{{ jsonSchema.title }}</h2>  
+		{{ jsonSchema.title }}      
+		<div v-for="(field, key) in jsonSchema.properties" :key="key">   	
+		
+			<component 				
 				:is="getComponentName(field)"
-				:schema="field" 
+				:schema="field"
+				:currentKey="key"
 				v-model="jsonSchemaData" ></component>
 
-		</div>
+		</div> -->
+
+		<h2>{{ jsonSchema.title }}</h2>   		   
+		<div v-for="(field, key) in jsonSchema.properties" :key="key">           
+      <component 
+				:is="getComponentName(field)"
+				:schema="field" 
+				:currentKey="key"
+				v-model="jsonSchemaData"></component>
+    </div>
+
 		<!-- {{ jsonSchema }} -->
-		<!-- {{ jsonSchemaData }}     -->
+		{{ jsonSchemaData }}
+		  
 	</div>
 </template>
 
@@ -25,7 +39,7 @@ import SelectList from "./input_components/SelectList"
 import ObjectComponent from "./utility_components/ObjectComponent"
 
 export default {
-	name: 'Section',
+	name: 'Note',
 	components: {
 		TextInput,
 		RadioInput,
@@ -49,7 +63,13 @@ export default {
 			default() {
 				return {}
 			}
-		}
+		},
+		currentKey: {
+      type: String,
+      default() {
+        return ""
+      }
+    }
 	},
 	data() {
 		return {
@@ -71,7 +91,10 @@ export default {
 				}			
 				else if (field.type === 'object') {
 					return "ObjectComponent"
-				}			
+				}		
+				else if (field.type === 'array') {
+					return "CheckList"
+				}	
 			}
 
 			switch (field.attrs.fieldType) {
@@ -109,4 +132,8 @@ export default {
 .padding-left {
 	padding-left: 3px;
 }
+.padding-left-large {
+	padding-left: 20px;
+}
+
 </style>

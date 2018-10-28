@@ -1,0 +1,87 @@
+
+  "socioeco": {
+    "title": "Social/Economic Evaluation",
+    "description": "social/Economic Evaluation",
+    "type": "object",
+    "properties": {
+      "living": {
+        "description": "lives",
+        "type": "string",
+        "title": "Lives",
+        "attrs": {
+          "fieldName": "living",
+          "fieldType": "radio",
+          "values": ["Residential home", "Nursing home", "Homeless"]
+        }
+      },
+      "family": {
+        "description": "family",
+        "type": "string",
+        "title": "Family support",
+        "attrs": {
+          "fieldName": "family",
+          "fieldType": "radio",
+          "values": ["Well", "Moderate", "Poor"]
+        }
+      },
+      "caregiver": {
+        "description": "caregiver",
+        "type": "string",
+        "title": "Main caregiver",
+        "attrs": {
+          "fieldName": "caregiver",
+          "fieldType": "radio",
+          "values": ["Couple", "Children", "Other"]
+        }
+      },
+      "finacial": {
+        "description": "finacial",
+        "type": "string",
+        "title": "Financial support",
+        "attrs": {
+          "fieldName": "finacial",
+          "fieldType": "radio",
+          "values": ["Sufficient", "Insufficient"]
+        }
+      }
+    }
+  },
+  {
+    "title": "Psychological Evaluation",
+    "type": "object",
+    "properties": {
+      "psyco": {
+        "description": "psyco",
+        "type": "string",
+        "attrs": {
+          "fieldName": "psyco",
+          "fieldType": "radio",
+          "values": ["Stable", "Psychotic Symptom or Dementia", "Severely Depressed", "Moderately Depressed", "Mildly Depressed", "Undetectable", "Other"]
+        }      
+      }
+    }
+  },
+  {
+    "title": "Review of the System",
+    "type": "object",
+    "properties": {
+      "general": {
+        "description": "general",
+        "type": "string",
+        "title": "General",
+        "attrs": {
+          "fieldType": "radio",
+          "values": ["Unremarkable", "Abnormal"]
+        }      
+      },
+      "abnormalities": {
+        "description": "general",
+        "type": "array",
+        "attrs": {
+          "fieldType": "checklist",
+          "values": ["Weight loss or gain", "Fever", "Chills", "Night sweating", "Fatigue", "Weakness", "Other"]
+        }
+      }
+    }
+  }
+

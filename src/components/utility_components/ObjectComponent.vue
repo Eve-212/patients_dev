@@ -1,10 +1,11 @@
 <template>
 	<div v-if="showInputField"> 
 		<legend class="field-title">{{ schema.title }}</legend>  
-		<div v-for="(field, key) in schema.properties" :key="key">   
+		<div v-for="(field, key) in schema.properties" :key="key"> 
 			<component 
-				:is="getComponentName(field.attrs.fieldType)" 
+				:is="getComponentName(field)" 
 				:schema="field"
+        :currentKey="key"
 				v-model="value[currentFieldName]">         
 			</component>
       {{value[currentFieldName]}}
@@ -46,11 +47,17 @@ export default {
       default() {
         return {}
       }
+    },
+    currentKey: {
+      type: String,
+      default() {
+        return ""
+      }
     }
   },
   data() {
     return {
-      currentFieldName: this.schema.attrs.fieldName
+      currentFieldName: this.currentKey
     }
   },
   created() {
@@ -62,8 +69,23 @@ export default {
     }
   },
   methods: {
-    getComponentName(type) {
-      switch (type) {
+    getComponentName(field) {
+      if (!(field.attrs && field.attrs.fieldType)) {
+				if (field.type === 'string') {
+					return "TextInput"
+				}
+				else if (field.type === 'number' || field.type === 'integer') {
+					return "NumberInput"
+				}			
+				else if (field.type === 'object') {
+					return "ObjectComponent"
+				}		
+				else if (field.type === 'array') {
+					return "CheckList"
+				}	
+			}
+      
+      switch (field.attrs.fieldType) {
         case 'text':
           return 'TextInput'
         case 'radio':
@@ -135,6 +157,15 @@ export default {
 </script>
 
 <style>
+.field-title {
+	color: blueviolet;
+}
+.display-inline {
+	display: inline-block;
+}
+.padding-left {
+	padding-left: 3px;
+}
 </style>
 
 

@@ -1,0 +1,301 @@
+
+  {
+    "title": "Admission Note",
+    "type": "object",
+    "properties": {
+      "profile": {
+        "type": "object",
+        "title": "Basic Profile",        
+        "properties": {
+          "name": {            
+            "type": "string",
+            "title": "Name"
+          },
+          "age": {
+            "title":"Age",
+            "type": "integer"
+          },
+          "birthdate": {
+            "title":"Birth Date",            
+            "type": "string",
+            "attrs": {
+              "fieldType": "date"
+            }
+          },
+          "chr_no": {
+            "title":"Chart No",
+            "type": "string"
+          },
+          "id_no": {
+            "title":"ID",
+            "type": "string"
+          },
+          "sex": {
+            "title":"Gender",
+            "type": "string"
+          }
+        }
+      },       
+      "admit_dept":{
+        "title":"Department",
+        "type":"string"
+      },
+      "admit_time": {
+        "title":"Time of Admission",        
+        "type": "string",
+        "attrs": {
+          "fieldType": "date"
+        }
+      },  
+      "evaluate_time": {
+        "title":"Time of History-talking",        
+        "type": "string",
+        "attrs": {
+          "fieldType": "date"
+        }
+      },
+      "source": {
+        "title":"Information Source",
+        "type": "string"
+      },
+      "cc": {
+        "title":"Chief Complaint",
+        "type": "string"
+      },
+      "pi": {
+        "title":"Present Illness",
+        "type": "string"
+      },
+      "travel_contact": {
+        "title":"Travel History",
+        "type": "string"
+      },
+      "personal_hx": {
+        "title":"Personal History",
+        "type": "object",
+        "properties": {
+          "cigarette": {
+            "title":"Smoking",
+            "type": "object",
+            "properties": {
+              "used": {
+                  "title":"Used",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              },
+              "type": {
+                  "title":"Type",
+                  "type": "array",
+                  "attrs": {                      
+                      "values":["Cigarettes","Electronic cigarettes"]
+                  }
+              },
+              "quitted": {
+                  "title":"Quitted",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              },
+              "pack_per_day": {
+                  "title":"Packs per day",
+                  "type": "number"
+              },
+              "duration": {
+                  "title":"for years",
+                  "type": "number"
+              },
+              "passive_expose": {
+                  "title":"Passive smoking",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              }
+            }
+          },                  
+        "alcohol": {
+          "title":"Alcohol drinking",
+          "type": "object",
+          "properties": {
+            "used": {
+              "title":"Used",
+              "type": "boolean",
+              "attrs": {
+                "fieldType": "radio",
+                "values": ["Yes", "No"]
+              }
+            },
+            "quitted": {
+              "title":"Quited",
+              "type": "boolean",
+              "attrs": {
+                "fieldType": "radio",
+                "values": ["Yes", "No"]
+              }
+            },
+            "vol_per_day": {
+              "title":"Volumn(ml) per day",
+              "type": "integer"
+            },
+            "duration": {
+              "title":"for years",
+              "type": "integer"
+            }
+          }
+        },
+        "betel_nut": {
+          "type": "object",          
+          "properties": {
+              "used": {
+                  "title":"Betel nuts",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              },
+              "quitted": {
+                  "title":"Quited",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                  }
+              },
+              "num_per_day": {
+                  "title":"Number per day",
+                  "type": "integer"
+              },
+              "duration": {
+                  "title":"for years",
+                  "type": "integer"
+              }
+          }
+        }
+        
+      }
+    },
+      "family_hx": {
+        "title":"Family History",
+        "type": "object"
+      },
+      "past_hx": {
+        "title":"Past History",
+        "type": "object",
+        "properties": {
+            "note": {
+                "title":"Note",
+                "type": "string"
+            }
+        }
+      },
+      "medication_hx": {
+        "title":"Medication history",
+        "type": "object",
+        "properties": {
+            "in_institute": {
+                "title":"Inside hospital",
+                "type": "string"
+            },
+            "out_institute": {
+                "title":"Other hispital/Clinic",
+                "type": "string"
+            }
+        }
+      },
+      "socioeco": {
+        "title": "Social/Economic Evaluation",
+        "description": "social/Economic Evaluation",
+        "type": "object",
+        "properties": {
+          "living": {
+            "description": "lives",
+            "type": "string",
+            "title": "Lives",
+            "attrs": {
+              "fieldName": "living",
+              "fieldType": "radio",
+              "values": ["Residential home", "Nursing home", "Homeless"]
+            }
+          },
+          "family": {
+            "description": "family",
+            "type": "string",
+            "title": "Family support",
+            "attrs": {
+              "fieldName": "family",
+              "fieldType": "radio",
+              "values": ["Well", "Moderate", "Poor"]
+            }
+          },
+          "caregiver": {
+            "description": "caregiver",
+            "type": "string",
+            "title": "Main caregiver",
+            "attrs": {
+              "fieldName": "caregiver",
+              "fieldType": "radio",
+              "values": ["Couple", "Children", "Other"]
+            }
+          },
+          "finacial": {
+            "description": "finacial",
+            "type": "string",
+            "title": "Financial support",
+            "attrs": {
+              "fieldName": "finacial",
+              "fieldType": "radio",
+              "values": ["Sufficient", "Insufficient"]
+            }
+          }
+        }
+      },
+      "psyco": {
+        "title": "Psychological Evaluation",
+        "type": "object",
+        "properties": {
+          "psyco": {
+            "description": "psyco",
+            "type": "string",
+            "attrs": {              
+              "fieldType": "radio",
+              "values": ["Stable", "Psychotic Symptom or Dementia", "Severely Depressed", "Moderately Depressed", "Mildly Depressed", "Undetectable", "Other"]
+            }      
+          }
+        }
+      },
+      "review_of_sys": {
+        "title": "Review of the System",
+        "type": "object",
+        "properties": {
+          "general": {
+            "description": "general",
+            "type": "string",
+            "title": "General",
+            "attrs": {
+              "fieldType": "radio",
+              "values": ["Unremarkable", "Abnormal"]
+            }      
+          },
+          "abnormalities": {
+            "description": "general",
+            "type": "array",
+            "attrs": {
+              "fieldType": "checklist",
+              "values": ["Weight loss or gain", "Fever", "Chills", "Night sweating", "Fatigue", "Weakness", "Other"]
+            }
+          }
+        }
+      }
+    
+      
+  }
+}
+
+

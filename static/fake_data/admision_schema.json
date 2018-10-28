@@ -1,0 +1,590 @@
+{
+  "type": "object",
+  "properties": {
+      "profile": {
+          "title":"Basic Profile",
+          "type": "object",
+          "properties": {
+              "name": {
+                  "title":"Name",
+                  "type": "string"
+              },
+              "age": {
+                  "title":"Age",
+                  "type": "integer"
+              },
+              "birthdate": {
+                  "title":"Birth Date",
+                  "format": "date",
+                  "type": "string"
+              },
+              "chr_no": {
+                  "title":"Chart No",
+                  "type": "string"
+              },
+              "id_no": {
+                  "title":"ID",
+                  "type": "string"
+              },
+              "sex": {
+                  "title":"Gender",
+                  "type": "string"
+              }
+          }
+      },
+      "admit_dept":{
+          "title":"Department",
+          "type":"string"
+      },
+      "admit_time": {
+          "title":"Time of Admission",
+          "format": "date-time",
+          "type": "string"
+      },
+      "evaluate_time": {
+          "title":"Time of History-talking",
+          "format": "date-time",
+          "type": "string"
+      },
+      "source": {
+          "title":"Information Source",
+          "type": "string"
+      },
+      "cc": {
+          "title":"Chief Complaint",
+          "type": "string"
+      },
+      "pi": {
+          "title":"Present Illness",
+          "type": "string"
+      },
+      "travel_contact": {
+          "title":"Travel History",
+          "type": "string"
+      },
+      "personal_hx": {
+          "title":"Personal History",
+          "type": "object",
+          "properties": {
+              "cigarette": {
+                  "title":"Smoking",
+                  "type": "object",
+                  "properties": {
+                      "used": {
+                          "title":"Used",
+                          "type": "boolean",
+                          "attrs": {
+                              "fieldType": "radio",
+                              "values": ["Yes", "No"]
+                          }
+                      },
+                      "type": {
+                          "title":"Type",
+                          "type": "array",
+                          "items": {
+                              "type":"string",
+                              "enum":["Cigarettes","Electronic cigarettes"]
+                          }
+                      },
+                      "quitted": {
+                          "title":"Quitted",
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                            }
+                      },
+                      "pack_per_day": {
+                          "title":"Packs per day",
+                          "type": "number"
+                      },
+                      "duration": {
+                          "title":"for years",
+                          "type": "number"
+                      },
+                      "passive_expose": {
+                          "title":"Passive smoking",
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                            }
+                      }
+                  }
+              },
+              "alcohol": {
+                  "title":"Alcohol drinking",
+                  "type": "object",
+                  "properties": {
+                      "used": {
+                          "title":"Used",
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                            }
+                      },
+                      "quitted": {
+                          "title":"Quited",
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                        }
+                      },
+                      "vol_per_day": {
+                          "title":"Volumn(ml) per day",
+                          "type": "integer"
+                      },
+                      "duration": {
+                          "title":"for years",
+                          "type": "integer"
+                      }
+                  }
+              },
+              "betel_nut": {
+                  "type": "object",
+                  "properties": {
+                      "used": {
+                          "title":"Betel nuts",
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                        }
+                      },
+                      "quitted": {
+                          "title":"Quited",
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                        }
+                      },
+                      "num_per_day": {
+                          "title":"Number per day",
+                          "type": "integer"
+                      },
+                      "duration": {
+                          "title":"for years",
+                          "type": "integer"
+                      }
+                  }
+              }
+          }
+      },
+      "allergy": {
+          "title":"Allergy",
+          "type": "object",
+          "properties": {
+              "list": {
+                  "type": "array",
+                  "items": {
+                      "type":"object",
+                      "properties":{
+                          "generic":{
+                              "title":"Gerneric name",
+                              "type":"string"
+                          },
+                          "product":{
+                              "title":"Gerneric name",
+                              "type":"string"
+                          }
+                          },
+                          "adr":{
+                              "title":"ADR",
+                              "type":"string"
+                          }
+                      }
+                  }
+              },
+              "note": {
+                  "title":"Note",
+                  "type": "string"
+              }
+          },
+      
+      "family_hx": {
+          "title":"Family History",
+          "type": "object"
+      },
+      "past_hx": {
+          "title":"Past History",
+          "type": "object",
+          "properties": {
+              "note": {
+                  "title":"Note",
+                  "type": "string"
+              }
+          }
+      },
+      "review_of_sys": {
+          "title":"Review of the System",
+          "type": "object",
+          "properties": {
+              "general": {
+                  "title":"General",
+                  "type": "array",
+                  "items":{ "type":"string" }
+              },
+              "skin": {
+                  "title":"Skin",
+                  "type": "array",
+                  "items":{ "type":"string" }
+              },
+              "heent": {
+                  "title":"HEENT",
+                  "type": "array",
+                  "items":{ "type":"string" }
+              },
+              "cardio_resp": {
+                  "title":"Cardio-Respiratory system",
+                  "type": "array",
+                  "items":{ "type":"string" }
+              },
+              "gi": {
+                  "title":"Gastrointestinal system",
+                  "type": "array",
+                  "items":{ "type":"string" }
+              },
+              "gu": {
+                  "title":"Genito-urinary system",
+                  "type": "array",
+                  "items":{ "type":"string" }
+              },
+              "neuro": {
+                  "title":"Neuro-Psychiatric system",
+                  "type": "array",
+                  "items":{ "type":"string" }
+              },
+              "mus_ske": {
+                  "title":"Musculoskeletal system",
+                  "type": "array",
+                  "items":{ "type":"string" }
+              }
+          }
+      },
+      "medication_hx": {
+          "title":"Medication history",
+          "type": "object",
+          "properties": {
+              "in_institute": {
+                  "title":"Inside hospital",
+                  "type": "string"
+              },
+              "out_institute": {
+                  "title":"Other hispital/Clinic",
+                  "type": "string"
+              }
+          }
+      },
+      "socioeco": {
+          "title":"Social/Economic Evaluation",
+          "type": "object",
+          "properties": {
+              "living": {
+                  "title":"Lives",
+                  "type": "string"
+              },
+              "family": {
+                  "title":"Family support",
+                  "type": "string"
+              },
+              "caregiver": {
+                  "title":"Main caregiver",
+                  "type": "string"
+              },
+              "finacial": {
+                  "title":"Financial support",
+                  "type": "string"
+              }
+          }
+      },
+      "psyco": {
+          "title":"Psychological Evaluation",
+          "type": "string"
+      },
+      "nutrition": {
+          "title":"Nutritional Evaluation",
+          "type": "object",
+          "properties": {
+              "higth": {
+                  "title":"Height(cm)",
+                  "type": "number"
+              },
+              "weight": {
+                  "title":"Weight(kg)",
+                  "type": "number"
+              },
+              "bmi": {
+                  "title":"Body Mass Index(BMI)",
+                  "type": "number"
+              },
+              "must": {
+                  "title":"MUST",
+                  "description":"Malnutrition Universal Screening Tool",
+                  "type": "object",
+                  "properties": {
+                      "bmi": {
+                          "title":"BMI",
+                          "type": "number"
+                      },
+                      "bmi_score": {
+                          "title":"BMI Score",
+                          "type": "integer"
+                      },
+                      "weight_loss": {
+                          "title":"Unplanned weight loss in 3-6 months",
+                          "type": "number"
+                      },
+                      "weight_loss_score": {
+                          "title":"Weight loss score",
+                          "type": "integer"
+                      },
+                      "acute_effect": {
+                          "title":"Acutely illness because of poor intake",
+                          "type": "boolean",
+                          "attrs": {
+                            "fieldType": "radio",
+                            "values": ["Yes", "No"]
+                        }
+                      },
+                      "acute_effect_score": {
+                          "title":"Acute disease effect score",
+                          "type": "integer"
+                      },
+                      "score": {
+                          "title":"Total score",
+                          "type": "integer"
+                      }
+                  }
+              }
+          }
+      },
+      "functional_assess": {
+          "title":"Functional Assessment",
+          "description":"Katz Index of Independence in Activities of Daily Living",
+          "type": "object",
+          "properties": {
+              "bath": {
+                  "title":"BATHING",
+                  "type": "integer"
+              },
+              "dress": {
+                  "title":"DRESSING",
+                  "type": "integer"
+              },
+              "toilet": {
+                  "title":"TOILETING",
+                  "type": "integer"
+              },
+              "transfer": {
+                  "title":"TRANSFERRING",
+                  "type": "integer"
+              },
+              "continence": {
+                  "title":"CONTINENCE",
+                  "type": "integer"
+              },
+              "feed": {
+                  "title":"FEEDING",
+                  "type": "integer"
+              },
+              "score": {
+                  "title":"Total",
+                  "type": "integer"
+              }
+          }
+      },
+      "pe": {
+          "title":"Physical Examination",
+          "type": "object",
+          "properties": {
+              "looking": {
+                  "title":"General looking",
+                  "type": "string"
+              },
+              "vitals": {
+                  "title":"Vital signs",
+                  "type": "object",
+                  "properties": {
+                      "bt": {
+                          "title":"BT(℃)",
+                          "type": "number"
+                      },
+                      "sbp": {
+                          "title":"SBP(mmHg)",
+                          "type": "integer"
+                      },
+                      "dbp": {
+                          "title":"SBP(mmHg)",
+                          "type": "integer"
+                      },
+                      "pr": {
+                          "title":"PR(/min)",
+                          "type": "integer"
+                      },
+                      "rr": {
+                          "title":"RR(/min)",
+                          "type": "integer"
+                      },
+                      "pain": {
+                          "title":"Pain score",
+                          "type": "integer"
+                      }
+                  }
+              }
+          }
+      },
+      "conscious": {
+          "title":"Consciousness",
+          "type": "string"
+      },
+      "GCS": {
+          "title":"Glasgow Coma Scale",
+          "type": "object",
+          "properties": {
+              "e": {
+                  "title":"E",
+                  "type": "integer"
+              },
+              "v": {
+                  "title":"V",
+                  "type": "integer"
+              },
+              "m": {
+                  "title":"M",
+                  "type": "integer"
+              },
+              "score": {
+                  "title":"Score",
+                  "type": "integer"
+              }
+          }
+      },
+      "skin": {
+          "title":"Skin",
+          "type": "object",
+          "properties": {
+              "intact": {
+                  "title":"Intact",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
+              },
+              "turgor": {
+                  "title":"Turgor",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
+              },
+              "cynosis": {
+                  "title":"Cyanosis",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
+              },
+              "jaundice": {
+                  "title":"Jaundice",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
+              },
+              "petechia": {
+                  "title":"Petechia",
+                  "type": "boolean",
+                  "attrs": {
+                    "fieldType": "radio",
+                    "values": ["Yes", "No"]
+                }
+              }
+          }
+      },
+      "heent": {
+          "title":"HEENT",
+          "type": "object",
+          "properties": {
+              "conjuntivae": {
+                  "title":"Conjunctivae",
+                  "type": "string"
+              },
+              "sclera": {
+                  "title":"Sclera",
+                  "type": "string"
+              },
+              "throat": {
+                  "title":"Throat",
+                  "type": "string"
+              }
+          }
+      },
+      "lab": {
+          "title":"Lab finding",
+          "type": "object",
+          "properties": {
+              "data": {
+                  "title":"XXXXX",
+                  "type": "object",
+                  "properties": {
+                      "blood": {
+                          "title":"Blood",
+                          "type": "array",
+                          "items":{ 
+                              "type":"object",
+                              "properties":{
+                                  "id":{
+                                      "type":"string"
+                                  },
+                                  "item":{
+                                      "type":"string"
+                                  },
+                                  "value":{
+                                      "type":"string"
+                                  },
+                                  "mark":{
+                                      "type":"string"
+                                  }
+                              }
+                            }
+                      }
+                  }
+              },
+              "note": {
+                  "title":"Note",
+                  "type": "string"
+              }
+          }
+      },
+      "image": {
+          "title":"Image finding",
+          "type": "array",
+          "items":{ "type":"string" }
+      },
+      "ecg": {
+          "title":"ECG finding",
+          "type": "string"
+      },
+      "exam": {
+          "title":"Examination Report",
+          "type": "array",
+          "items":{ "type":"string" }
+      },
+      "impression": {
+          "title":"Impressions",
+          "type": "string"
+      },
+      "plan": {
+          "title":"Plan (Management)",
+          "type": "string"
+      }
+  }
+}
+
