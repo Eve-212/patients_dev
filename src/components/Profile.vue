@@ -1,6 +1,6 @@
 <template>
   <div :class="{isExpanded: isExpanded}">
-    <div class="card-wrap">
+    <!-- <div class="card-wrap">
       <div>柯博文｜<span>Obstetrics and gynaecology units</span></div>
       <div>
         <div class="btn" :class="{followed:items.basic.followBtn.clicked}" @click="follow()">
@@ -8,7 +8,7 @@
         </div>
         <a class="btn" href="mailto:dumbo750212@msn.com"><i class="fa fa-envelope"></i>Email</a>
       </div>
-    </div>
+    </div> -->
     <div class="content-wrap">
       <router-view @unfollow="unfollow"></router-view>
     </div>
@@ -64,8 +64,8 @@ export default {
         console.log(resp)
       })
       // let wf = new APIClient({
-      //   spec_url: 'http://10.66.30.213:4000/api/spec.get',
-      //   server_url: 'http://10.65.1.228:3001/api'
+      //   spec_url: 'http://10.65.1.228:3000/api/spec.get',
+      //   server_url: 'http://10.65.1.228:3000/api'
       // })
 
       // wf.loader

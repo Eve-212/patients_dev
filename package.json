@@ -19,6 +19,7 @@
     "moleculer-openapi-client": "git+http://10.65.1.66:3000/OneRecord/moleculer-openapi-client.git",
     "vue": "^2.5.2",
     "vue-airbnb-style-datepicker": "^2.1.0",
+    "vue-lodash": "^2.0.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

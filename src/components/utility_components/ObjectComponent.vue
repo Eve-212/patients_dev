@@ -8,6 +8,7 @@
         :currentKey="key"
 				v-model="value[currentFieldName]">         
 			</component>
+      {{value[currentFieldName]}}
 		</div>
 	</div>
 </template>

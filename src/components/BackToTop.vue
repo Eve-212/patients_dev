@@ -14,7 +14,7 @@ export default {
     },
     visibleoffset: {
       type: [String, Number],
-      default: 100
+      default: 200
     },
     right: {
       type: String,
@@ -47,11 +47,11 @@ export default {
   methods: {
     catchScroll() {
       this.visible = window.pageYOffset > parseInt(this.visibleoffset)
+      this.$emit('hide', this.visible)
     },
 
     backToTop() {
       window.smoothscroll()
-      this.$emit('scrolled')
     }
   }
 }
