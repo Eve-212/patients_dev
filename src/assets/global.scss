@@ -1,39 +1,36 @@
-
 @function px-to-vw($px, $base) {
   @return ($px * 100 / $base) * 1vw;
 }
 
 $break-small: 450px;
-$break-medium: 800px;
+$break-medium: 650px;
 $break-large: 1200px;
 $brown: #786450;
-$blue:  #506478;
+$blue: #17a2b8;
 $black: #1d2129;
+$green: #9be497;
+$red: #dc3545;
+$red-light: #ea8989;
 
-*, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Microsoft JhengHei, sans-serif, Font Awesome 5 Brands;
-}
-
-* {
-    font-size: 14px;
-    color: $black;
+*,
+body {
+  color: $black;
+  box-sizing: border-box;
+  font-family: Microsoft JhengHei, sans-serif, Font Awesome 5 Brands;
 }
 
 *:focus {
-    outline: 0;
+  outline: 0 !important;
+  box-shadow: none;
 }
 
 button:focus {
-    outline: 0;
+  outline: 0;
 }
 
-.fa {
-    cursor: pointer;
-    font-size: 14px;
-    color: $black;
+i.fa {
+  cursor: pointer;
+  color: $black;
 }
 
 .isExpanded {
@@ -41,4 +38,21 @@ button:focus {
   @media screen and (max-width: $break-medium) {
     margin-left: 0;
   }
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 12px;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 12px;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 12px;
 }

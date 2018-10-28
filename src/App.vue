@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <router-view @authenticated="setAuthenticated"></router-view>
+        <router-view @authenticated="setAuthenticated" :user="authenticated.user"></router-view>
     </div>
 </template>
 
@@ -11,17 +11,21 @@ export default {
   name: 'App',
   data() {
     return {
-      authenticated: false
+      authenticated: {
+        status: false,
+        user: ''
+      }
     }
   },
   mounted() {
-    if (!this.authenticated) {
+    if (!this.authenticated.status) {
       this.$router.replace({ name: 'login' })
     }
   },
   methods: {
-    setAuthenticated(status) {
-      this.authenticated = status
+    setAuthenticated(v) {
+      this.authenticated.status = v.status
+      this.authenticated.user = v.user
     }
   }
 }

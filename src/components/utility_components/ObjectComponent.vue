@@ -7,6 +7,7 @@
 				:schema="field"
 				v-model="value[currentFieldName]">         
 			</component>
+      {{value[currentFieldName]}}
 		</div>
 	</div>
 </template>
